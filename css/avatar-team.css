@@ -1221,6 +1221,36 @@
     transition: color 180ms ease;
 }
 
+.profile-strength-tag {
+    margin: -6px 0 18px;
+    padding: 9px 11px;
+
+    border: 1px solid rgba(155, 92, 255, 0.22);
+    background:
+        linear-gradient(
+            90deg,
+            rgba(155, 92, 255, 0.09),
+            rgba(20, 168, 255, 0.035)
+        );
+    color: #d9d2e5;
+
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+.profile-strength-tag span {
+    display: block;
+
+    margin-bottom: 2px;
+
+    color: #a775ef;
+
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.5rem;
+    letter-spacing: 1.5px;
+}
+
 .ability {
     padding: 13px 15px;
     margin-bottom: 18px;
@@ -1277,6 +1307,48 @@
     border-color: rgba(155, 92, 255, 0.18);
 }
 
+.avatar-closing-section {
+    width: min(var(--page-width), calc(100% - 48px));
+    margin: 0 auto;
+    padding: 100px 24px 110px;
+
+    border-top: 1px solid rgba(155, 92, 255, 0.16);
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(119, 75, 202, 0.1),
+            transparent 50%
+        );
+
+    text-align: center;
+}
+
+.avatar-closing-section > p:first-child {
+    margin-bottom: 14px;
+
+    color: #53ffb5;
+
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.58rem;
+    font-weight: 900;
+    letter-spacing: 2.5px;
+}
+
+.avatar-closing-section h2 {
+    margin-bottom: 24px;
+
+    font-size: clamp(2.2rem, 5vw, 4.8rem);
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+.avatar-closing-section > p:last-child {
+    max-width: 760px;
+    margin: 0 auto;
+
+    color: #aaa2b7;
+}
+
 @media (max-width: 950px) {
     .avatar-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1328,6 +1400,11 @@
 
     .avatar-selection-section::before {
         right: 0;
+    }
+
+    .avatar-closing-section {
+        width: min(100% - 30px, var(--page-width));
+        padding: 80px 16px 90px;
     }
 
     .avatar-hero {
