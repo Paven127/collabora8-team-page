@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        (() => {
+            document.documentElement.classList.add("js");
+
+            try {
+                const key = "collabora8:pixel-transition";
+                const pending = JSON.parse(sessionStorage.getItem(key));
+                const currentPath = decodeURIComponent(location.pathname)
+                    .replace(/\\/g, "/")
+                    .toLowerCase();
+                const targetPath = decodeURIComponent(pending?.target || "")
+                    .replace(/\\/g, "/")
+                    .toLowerCase();
+                const isFresh = Date.now() - pending.createdAt < 10000;
+
+                if (isFresh && currentPath === targetPath) {
+                    document.documentElement.classList.add("is-transition-arrival");
+                }
+            } catch (error) {
+                // A normal page load does not need an arrival cover.
+            }
+        })();
+    </script>
+
+    <title>Our Team | Real World</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/real-team.css">
+</head>
+
+<body class="real-page">
+
+    <nav class="navbar">
+        <a class="brand" href="index.html">
+            Digital<span>Pioneers</span>
+        </a>
+
+        <div class="mode-label">
+            REAL MODE
+        </div>
+    </nav>
+
+    <header class="real-hero">
+        <div class="hero-copy">
+            <p class="eyebrow">COLLABORA8 TEAM PROFILE</p>
+
+            <h1>
+                Real people.<br>
+                <span>Different strengths.</span><br>
+                One team.
+            </h1>
+
+            <p class="hero-description">
+                We are a team of five individuals working together through
+                communication, responsibility, creativity and shared effort.
+            </p>
+
+            <a class="primary-button page-transition" href="avatars.html">
+                Enter Avatar World
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+        </div>
+
+        <div class="hero-decoration" aria-hidden="true">
+            <span>05</span>
+            <p>TEAM MEMBERS</p>
+            <small>REAL PROFILES</small>
+        </div>
+    </header>
+
+    <main>
+        <section class="members-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">MEET THE PEOPLE</p>
+                    <h2>Our Team</h2>
+                </div>
+            </div>
+
+            <div class="real-team-grid">
+
+                <article class="real-member-card">
+                    <div class="real-photo-placeholder">
+    <img
+        src="images/real/Paven-real.jpeg"
+        alt="Photograph of Paven"
+    >
+
+    <span class="placeholder-label">Paven Govender</span>
+</div>
+
+                    <div class="real-member-details">
+                        <p class="member-number">01</p>
+                        <h3>Paven Govender</h3>
+                        <p class="member-role">Founder</p>
+                        <p class="member-description">
+                            Established the team’s vision and brought its members together
+                            around a shared purpose. The Founder guides the team’s overall
+                            direction, supports key decisions and ensures that the project
+                            remains aligned with its goals.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="real-member-card">
+                   <div class="real-photo-placeholder">
+    <img
+        src="images/real/Evidence-real.jpeg"
+        alt="Photograph of Evidence"
+    >
+
+    <span class="placeholder-label">Evidence</span>
+</div>
+
+                    <div class="real-member-details">
+                        <p class="member-number">02</p>
+                        <h3>Evidence</h3>
+                        <p class="member-role">Chief Executive Officer (CEO)</p>
+                        <p class="member-description">
+                            Provides the overall direction for the team, sets priorities
+                            and coordinates important decisions. The CEO ensures that each
+                            member’s work supports the team’s shared goals and vision.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="real-member-card">
+                    <div class="real-photo-placeholder">
+    <img
+        src="images/real/Itu -real.jpeg"
+        alt="Photograph of Itumeleng"
+    >
+
+    <span class="placeholder-label">Itumeleng</span>
+</div>
+
+                    <div class="real-member-details">
+                        <p class="member-number">03</p>
+                        <h3>Itumeleng</h3>
+                        <p class="member-role">Chief Information Security Officer (CISO)</p>
+                        <p class="member-description">
+                            Oversees the team’s cybersecurity approach, identifies potential
+                            risks and promotes the responsible handling of information. The
+                            CISO helps ensure that security is considered throughout the
+                            team’s work.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="real-member-card">
+                    <div class="real-photo-placeholder">
+    <img
+        src="images/real/Tsebo-real.jpeg"
+        alt="Photograph of Tsebo Letele"
+    >
+
+    <span class="placeholder-label">Tsebo Letele</span>
+</div>
+
+                    <div class="real-member-details">
+                        <p class="member-number">04</p>
+                        <h3>Tsebo Letele</h3>
+                        <p class="member-role">Chief Technology Officer (CTO)</p>
+                        <p class="member-description">
+                            Leads the team’s technical direction and oversees the development
+                            of reliable, practical and secure solutions. The CTO guides
+                            technology decisions, supports the development process and ensures
+                            that technical work aligns with the team’s goals.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="real-member-card">
+                    <div class="real-photo-placeholder">
+    <img
+        src="images/real/onta - real.jpeg"
+        alt="Photograph of Onthatile Mokoena"
+    >
+
+    <span class="placeholder-label">Onthatile Mokoena</span>
+</div>
+
+                    <div class="real-member-details">
+                        <p class="member-number">05</p>
+                        <h3>Onthatile Mokoena</h3>
+                        <p class="member-role">Pre-Sales Consultant</p>
+                        <p class="member-description">
+                            Identifies client needs and explains how the team’s proposed
+                            solution can address them. The Pre-Sales Consultant supports
+                            demonstrations, prepares solution information and communicates
+                            the value of the team’s work.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="real-closing-section">
+            <p class="eyebrow">OUR SHARED PURPOSE</p>
+
+            <h2>
+                Individually capable.<br>
+                <span>Stronger together.</span>
+            </h2>
+
+            <p>
+                Our team combines different perspectives and abilities to
+                achieve a shared goal.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Collabora8 Team Profile</p>
+        <p>Real Image Edition &middot; 2026</p>
+    </footer>
+
+    <script src="js/transition.js"></script>
+</body>
+</html>

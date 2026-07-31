@@ -1,0 +1,475 @@
+.real-page {
+    background:
+        radial-gradient(
+            circle at 75% 20%,
+            rgba(20, 168, 255, 0.15),
+            transparent 24%
+        ),
+        #000000;
+}
+
+.real-hero {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    align-items: center;
+    gap: 60px;
+
+    width: min(var(--page-width), calc(100% - 48px));
+    min-height: 680px;
+    margin: 0 auto;
+    padding: 70px 0 110px;
+}
+
+.hero-copy h1 {
+    max-width: 900px;
+    margin: 18px 0 28px;
+
+    font-size: clamp(3.4rem, 7vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: -5px;
+}
+
+.hero-copy h1 span {
+    color: transparent;
+
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+}
+
+.hero-description {
+    max-width: 650px;
+    margin-bottom: 35px;
+
+    color: var(--light-grey);
+
+    font-size: 1.05rem;
+}
+
+.hero-decoration {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    aspect-ratio: 1;
+    max-width: 330px;
+    margin-left: auto;
+
+    border: 1px solid rgba(20, 168, 255, 0.35);
+    border-radius: 50%;
+
+    box-shadow:
+        inset 0 0 60px rgba(20, 168, 255, 0.08),
+        0 0 80px rgba(20, 168, 255, 0.08);
+
+    animation: hero-circle-pulse 3s ease-in-out infinite;
+}
+
+.hero-decoration::before,
+.hero-decoration::after {
+    content: "";
+
+    position: absolute;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.hero-decoration::before {
+    inset: 18px;
+}
+
+.hero-decoration::after {
+    inset: 42px;
+}
+
+.hero-decoration span {
+    font-size: clamp(4rem, 8vw, 7rem);
+    font-weight: 900;
+    line-height: 1;
+}
+
+.hero-decoration p {
+    color: var(--blue);
+
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.hero-decoration small {
+    margin-top: 4px;
+
+    color: rgba(255, 255, 255, 0.42);
+
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 2.4px;
+}
+
+@keyframes hero-circle-pulse {
+    50% {
+        transform: scale(1.025);
+
+        box-shadow:
+            inset 0 0 75px rgba(20, 168, 255, 0.12),
+            0 0 100px rgba(20, 168, 255, 0.14);
+    }
+}
+
+.members-section {
+    width: min(var(--page-width), calc(100% - 48px));
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 40px;
+
+    margin-bottom: 55px;
+}
+
+.section-heading h2 {
+    margin-top: 8px;
+
+    font-size: clamp(2.5rem, 5vw, 4.6rem);
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+.section-description {
+    max-width: 430px;
+
+    color: var(--dark-grey);
+}
+
+.real-team-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+}
+
+.real-member-card {
+    position: relative;
+    grid-column: span 2;
+
+    overflow: hidden;
+
+    border: 1px solid #202020;
+    border-radius: 18px;
+
+    background: var(--almost-black);
+
+    transition:
+        border-color 250ms ease,
+        transform 250ms ease,
+        box-shadow 250ms ease;
+}
+
+.real-member-card:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+.real-member-card:nth-child(5) {
+    grid-column: 4 / span 2;
+}
+
+.real-member-card::before {
+    content: "";
+
+    position: absolute;
+    z-index: 4;
+    inset: 0;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(20, 168, 255, 0.5),
+            transparent
+        );
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.real-member-card:hover {
+    border-color: var(--blue);
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 24px 55px rgba(0, 0, 0, 0.6),
+        0 0 28px rgba(20, 168, 255, 0.13);
+}
+
+.real-member-card:hover::before {
+    animation: border-flash 800ms ease;
+}
+
+@keyframes border-flash {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    40% {
+        opacity: 0.35;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+.real-photo-placeholder {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 360px;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #181818,
+            #050505
+        );
+}
+
+.real-photo-placeholder::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.75),
+            transparent 50%
+        );
+}
+
+.placeholder-person {
+    position: relative;
+
+    width: 175px;
+    height: 230px;
+
+    opacity: 0.16;
+}
+
+.placeholder-head {
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 105px;
+    height: 105px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    transform: translateX(-50%);
+}
+
+.placeholder-body {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    width: 175px;
+    height: 120px;
+
+    border-radius: 90px 90px 20px 20px;
+
+    background: white;
+
+    transform: translateX(-50%);
+}
+
+.placeholder-label {
+    position: absolute;
+    z-index: 2;
+    bottom: 20px;
+    left: 22px;
+
+    color: var(--dark-grey);
+
+    font-size: 0.65rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.real-photo-placeholder img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    filter: brightness(0.88);
+
+    object-fit: cover;
+    object-position: center;
+
+    transition:
+        filter 250ms ease,
+        transform 350ms ease;
+}
+
+.real-member-card:hover .real-photo-placeholder img {
+    filter: brightness(0.98);
+    transform: scale(1.012);
+}
+
+.real-member-details {
+    position: relative;
+    padding: 28px;
+}
+
+.member-number {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+    color: #292929;
+
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.real-member-details h3 {
+    margin-bottom: 3px;
+
+    font-size: 1.4rem;
+}
+
+.member-role {
+    margin-bottom: 18px;
+
+    color: var(--blue);
+
+    font-size: 0.73rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.member-description {
+    color: #969696;
+    font-size: 0.9rem;
+}
+
+.real-closing-section {
+    padding: 130px 24px;
+
+    border-top: 1px solid #181818;
+
+    background:
+        linear-gradient(
+            130deg,
+            rgba(20, 168, 255, 0.08),
+            transparent 50%
+        );
+
+    text-align: center;
+}
+
+.real-closing-section h2 {
+    margin: 15px 0 25px;
+
+    font-size: clamp(2.8rem, 7vw, 6.5rem);
+    line-height: 0.96;
+    letter-spacing: -4px;
+}
+
+.real-closing-section h2 span {
+    color: var(--blue);
+}
+
+.real-closing-section > p:last-child {
+    max-width: 620px;
+    margin: 0 auto;
+
+    color: var(--light-grey);
+}
+
+@media (max-width: 950px) {
+    .real-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-decoration {
+        width: 240px;
+        margin: 10px auto 0;
+    }
+
+    .real-team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .real-member-card,
+    .real-member-card:nth-child(4),
+    .real-member-card:nth-child(5) {
+        grid-column: auto;
+    }
+
+    .real-member-card:last-child {
+        grid-column: 1 / -1;
+        width: calc(50% - 12px);
+        justify-self: center;
+    }
+}
+
+@media (max-width: 650px) {
+    .real-hero,
+    .members-section {
+        width: min(100% - 30px, var(--page-width));
+    }
+
+    .real-hero {
+        min-height: auto;
+        padding: 75px 0 100px;
+    }
+
+    .hero-decoration {
+        width: 205px;
+        margin-top: 8px;
+    }
+
+    .hero-copy h1 {
+        letter-spacing: -3px;
+    }
+
+    .section-heading {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .real-team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .real-member-card,
+    .real-member-card:last-child {
+        grid-column: auto;
+        width: 100%;
+    }
+
+    .real-photo-placeholder {
+        height: 330px;
+    }
+
+}
